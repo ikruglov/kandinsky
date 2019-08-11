@@ -12,6 +12,7 @@ function knd_post_card( WP_Post $cpost ) {
         <div class="entry-preview"><?php echo knd_post_thumbnail($cpost->ID, 'post-thumbnail');?></div>
         <div class="entry-data">
             <h4 class="entry-title"><?php echo get_the_title($cpost);?></h4>
+            <div class="entry-summary"><?php echo apply_filters( 'knd_the_title', knd_get_post_excerpt( $cpost, 30, true ) ); ?></div>
         </div>
 
         <div class="entry-meta"><?php echo strip_tags(knd_posted_on($cpost), '<span>');?></div>
