@@ -14,7 +14,7 @@ var basePaths = { // Paths for source and bundled parts of app
 	// Env - call gulp --prod to go into production mode
 	sassStyle = 'expanded', // SASS syntax
 	sourceMap = true, // Wheter to build source maps
-	isProduction = false, // Mode flag
+	isProduction = true, // Mode flag
 	changeEvent = function( evt ) { // Log
 		gutil.log( 'File', gutil.colors.cyan( evt.path.replace( new RegExp( '/.*(?=/' + basePaths.src +
 																			')/' ), '' ) ), 'was', 		gutil.colors.magenta( evt.type ) );
