@@ -24,14 +24,6 @@ get_header();
        
     </header>
     
-    <div class="flex-row entry-preview-single centered">
-        
-        <div class="flex-cell flex-md-10">
-            <?php knd_single_post_thumbnail($cpost->ID, 'full', 'introimg'); ?>
-        </div>
-        
-    </div>
-    
 
     <div class="flex-row entry-content-single">
         
@@ -45,10 +37,6 @@ get_header();
 
     	<main class="flex-cell flex-md-8">					
     		
-            <div class="entry-lead">
-                <?php echo apply_filters('knd_the_content', $cpost->post_excerpt); ?>
-                
-                </div>
     		<div class="entry-content the-content">
                 <?php echo apply_filters('the_content', $cpost->post_content); ?>
             </div>
