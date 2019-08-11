@@ -296,6 +296,9 @@ function knd_get_social_media_supported() {
 		'twitter' => array( 
 			'label' => esc_html__( 'Twitter', 'knd' ), 
 			'description' => esc_html__( 'E.g., https://twitter.com/your-organization-page', 'knd' ) ), 
+		'viber' => array(
+			'label' => esc_html__( 'Viber', 'knd' ),
+			'description' => esc_html__( 'E.g., https://invite.viber.com/your-organization-invitation-link', 'knd' ) ),
 		'telegram' => array( 
 			'label' => esc_html__( 'Telegram', 'knd' ), 
 			'description' => esc_html__( 'E.g., https://tlgrm.ru/channels/@your-organization-page', 'knd' ) ), 
