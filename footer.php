@@ -7,8 +7,6 @@
  * @package bb
  */
 
-$cc_link = '<a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank">Creative Commons СС-BY-SA 3.0</a>';
-
 
 $footer_text = knd_get_theme_mod('footer_text');
 ?>
@@ -47,7 +45,6 @@ $footer_text = knd_get_theme_mod('footer_text');
 				
 			<div class="copy">
 				<?php echo apply_filters('knd_the_content', $footer_text); ?>	
-				<p><?php printf(__('All materials of the site are avaliabe under license %s', 'knd'), $cc_link);?></p>
 			</div>
 			
 		</div>
