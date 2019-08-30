@@ -134,3 +134,47 @@ if((is_admin() && !empty($_GET['page']) && $_GET['page'] == 'knd-setup-wizard' )
 __('Kandinsky', 'knd');
 __('Teplitsa', 'knd');
 __('The beautiful design and useful features for nonprofit website', 'knd');
+
+# ikruglov
+# https://geekflare.com/wordpress-performance-optimization-without-plugin/
+
+## Remove RSD Links
+remove_action( 'wp_head', 'rsd_link' ) ;
+
+## Disable Emoticons
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );
+
+## Remove Shortlink
+remove_action('wp_head', 'wp_shortlink_wp_head');
+
+## Disable Embeds
+function disable_embed(){
+    wp_dequeue_script( 'wp-embed' );
+}
+
+add_action( 'wp_footer', 'disable_embed' );
+
+# Hide WordPress Version
+remove_action( 'wp_head', 'wp_generator' ) ;
+
+# Remove WLManifest Link
+remove_action( 'wp_head', 'wlwmanifest_link' ) ;
+
+## Disable Self Pingback
+function disable_pingback( &$links ) {
+    foreach ( $links as $l => $link )
+        if ( 0 === strpos( $link, get_option( 'home' ) ) )
+            unset($links[$l]);
+}
+
+add_action( 'pre_ping', 'disable_pingback' );
+
+# https://crunchify.com/how-to-clean-up-wordpress-header-section-without-any-plugin/
+
+## Remove api.w.org relation link
+remove_action('wp_head', 'rest_output_link_wp_head', 10);
+remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
+remove_action('template_redirect', 'rest_output_link_header', 11, 0);
