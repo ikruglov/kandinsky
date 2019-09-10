@@ -112,9 +112,8 @@
 	}
 	
 	.entry-data {
-		padding: 11px $base 0px 23px;
+		padding: 11px $base $gut * 2 23px;
 		position: relative;
-		margin-bottom:$gut * 2;
 	}
 	
 	.entry-preview {
@@ -178,9 +177,8 @@
 	}
 	
 	.entry-data {
-        padding: 21px 33px 0px 33px;
+        padding: 21px 33px $gut * 1.6 33px;
         position: relative;
-        margin-bottom: $gut * 1.6;
 	}
 	
 	.entry-meta {
