@@ -303,17 +303,22 @@ if ( defined( 'LEYKA_VERSION' ) ) {
 			return translate('Posts not found', 'shortcodes-ultimate');
 		}
 
-		wp_enqueue_style(
-			'leyka-revo-plugin-styles',
-			LEYKA_PLUGIN_BASE_URL.'assets/css/public.css',
-			array(),
-			LEYKA_VERSION
-		);
-
 		return $out;
 	}
 } else {
 	function knd_leyka_inline_campaigns_list(array $atts = array()) {
 		return '';
 	}
+}
+
+add_filter('leyka_modern_template_displayed', 'knd_leyka_modern_template_displayed');
+function knd_leyka_modern_template_displayed($value) {
+    $post = get_post();
+    if ($post) {
+        if (has_shortcode($post->post_content, 'leyka_inline_campaigns_list') || has_shortcode($post->post_content, 'knd_leyka_inline_campaigns_list')) {
+            return true;
+        }
+    }
+
+    return $value;
 }
