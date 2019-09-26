@@ -261,3 +261,59 @@ function knd_recommendation_shortcode( $atts, $content = null ) {
         esc_html__( 'Recommendations:', 'knd' ) . '</span> ' . apply_filters( 'knd_the_content', $content ) . '</div>' : '';
 }
 
+add_shortcode('leyka_inline_campaigns_list', 'knd_leyka_inline_campaigns_list');
+add_shortcode('knd_leyka_inline_campaigns_list', 'knd_leyka_inline_campaigns_list');
+if ( defined( 'LEYKA_VERSION' ) ) {
+	function knd_leyka_inline_campaigns_list(array $atts = array()) {
+		$list_atts = shortcode_atts(array(
+			'tag'            => false,
+			'offset'         => 0,
+			'posts_per_page' => 10,
+			'post_type'      => Leyka_Campaign_Management::$post_type,
+		), $atts);
+
+		$tag = $list_atts['tag'];
+		if (empty($tag)) {
+			return translate('Posts not found', 'shortcodes-ultimate');
+		}
+
+		$campaigns = get_posts($list_atts);
+		if (sizeof($campaigns) == 0) {
+			return translate('Posts not found', 'shortcodes-ultimate');
+		}
+
+		$out = '';
+		foreach($campaigns as $campaign) {
+			$campaign_id = $campaign->ID;
+			if ($campaign->post_type === Leyka_Campaign_Management::$post_type) {
+                $atts["id"] = $campaign_id;
+                $campaign_atts = shortcode_atts(array(
+                    'id'             => false,
+                    'template'       => 'revo', // leyka_options()->opt('donation_form_template'),
+                    'show_thumbnail' => leyka_options()->opt('revo_template_show_thumbnail'),
+                    'show_finished'  => true,
+                    'show_preview'   => true,
+                ), $atts);
+
+                $out .= leyka_inline_campaign($campaign_atts);
+			}
+		}
+
+		if ($out == "") {
+			return translate('Posts not found', 'shortcodes-ultimate');
+		}
+
+		wp_enqueue_style(
+			'leyka-revo-plugin-styles',
+			LEYKA_PLUGIN_BASE_URL.'assets/css/public.css',
+			array(),
+			LEYKA_VERSION
+		);
+
+		return $out;
+	}
+} else {
+	function knd_leyka_inline_campaigns_list(array $atts = array()) {
+		return '';
+	}
+}
