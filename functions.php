@@ -178,3 +178,10 @@ add_action( 'pre_ping', 'disable_pingback' );
 remove_action('wp_head', 'rest_output_link_wp_head', 10);
 remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
 remove_action('template_redirect', 'rest_output_link_header', 11, 0);
+
+
+# Debugging wp_mail
+#add_action('wp_mail_failed', 'action_wp_mail_failed', 10, 1);
+#function action_wp_mail_failed($wp_error) {
+#    return error_log(print_r($wp_error, true));
+#}
