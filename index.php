@@ -19,27 +19,6 @@ get_header();
     </div></div>
 
 <?php  } else { ?>
-    <?php 
-    if($paged == 1) { //featured posts
-    	//2 for featured 
-    	$featured = array_slice($posts, 0, 2); 
-    	array_splice($posts, 0, 2);
-    ?>
-
-        <div class="featured-post listing-bg">
-            <div class="container">
-                <div class="flex-row cards-loop">
-                <?php
-                    foreach($featured as $f){
-                        knd_related_post_card($f);
-                    }
-                ?>
-                </div>
-            </div>
-        </div>
-
-    <?php } ?>
-
     <?php if(!empty($posts)):?>
     <div class="main-content cards-holder listing-bg archive-post-list <?php if($paged > 1):?>next-page<?php endif?>">
         <div class="container">
