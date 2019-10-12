@@ -544,15 +544,15 @@ function knd_logo_markup() {
     <div class="logo-image-only"><?php echo knd_get_logo_img();?></div>
 <?php } elseif($mod == 'text_only') {?>
     <div class="logo-text-only">
-        <h1 class="logo-name"><?php bloginfo('name');?></h1>
-        <h2 class="logo-name"><?php bloginfo('description');?></h2>
+        <div class="logo-name h1-logo-name"><?php bloginfo('name');?></div>
+        <div class="logo-name h2-logo-name"><?php bloginfo('description');?></div>
     </div>
 <?php } else {?>
     <div class="logo-complex">
         <div class="logo"><?php echo knd_get_logo_img();?></div>
         <div class="text">
-            <h1 class="logo-name"><?php bloginfo('name');?></h1>
-            <h2 class="logo-name"><?php bloginfo('description');?></h2>
+            <div class="logo-name h1-logo-name"><?php bloginfo('name');?></div>
+            <div class="logo-name h2-logo-name"><?php bloginfo('description');?></div>
         </div>
     </div>
 <?php }?>
@@ -583,11 +583,11 @@ function knd_hero_image_markup() {
 		<div class="hero-content">
 
 		<?php if($knd_hero_image_support_title) { ?>
-			<div class="hero-title"><?php echo $knd_hero_image_support_title ?></div>
+			<h1 class="hero-title"><?php echo $knd_hero_image_support_title ?></h1>
 		<?php } ?>
 
 		<?php if($knd_hero_image_support_text) { ?>
-			<div class="hero-text"><?php echo $knd_hero_image_support_text ?></div>
+			<h2 class="hero-text"><?php echo $knd_hero_image_support_text ?></h2>
 		<?php } ?>
 
 		<?php if( $knd_hero_image_support_url && $knd_hero_image_support_button_caption ) { ?>
