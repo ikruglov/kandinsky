@@ -2,7 +2,6 @@
 *.iml
 out
 gen
-.htaccess
 .idea/
 /_temp
 /upd_root.sh
