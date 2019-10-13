@@ -200,6 +200,7 @@ function knd_adminbar_logo( $wp_admin_bar ) {
 		array( 'id' => 'wp-logo', 'title' => '<span class="ab-icon"></span>', 'href' => '' ) );
 }
 
+/*
 add_action( 'wp_footer', 'knd_adminbar_voices' );
 add_action( 'admin_footer', 'knd_adminbar_voices' );
 
@@ -236,7 +237,7 @@ function knd_adminbar_voices() {
 	});
 </script>
 <?php
-}
+}*/
 
 /** == Filter to ensure https for local URLs in content == **/
 function knd_force_https( $content ) {
