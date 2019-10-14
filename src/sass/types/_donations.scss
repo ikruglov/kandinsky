@@ -14,11 +14,6 @@
 
     div[id*="leyka-pf-"].card-2col  {
         margin-bottom: $gut;
-
-        @include for(large-screens) {
-            margin-left: -96px;
-            margin-right: -96px;
-        }
     }
 
     div[id*="leyka-pf-"] {

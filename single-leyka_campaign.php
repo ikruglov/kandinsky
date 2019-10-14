@@ -17,7 +17,7 @@ get_header();
 <article class="main-content leyka-campaign">
 <div class="container">
 
-	<header class="entry-header-single container-text">
+	<header class="entry-header-single">
         <div class="entry-meta">
         <?php if($is_finished) { ?>
             <a href="<?php echo site_url('/campaign/completed/'); ?>" class="entry-link">
@@ -29,23 +29,33 @@ get_header();
             </a> 
         <?php } ?>
         </div>
+
 		<h1 class="entry-title"><?php echo get_the_title($cpost);?><?php echo $age;?></h1>
+		<div class="mobile-sharing hide-on-medium"><?php echo knd_social_share_no_js();?></div>
 	</header>
-	
-	<main class="container-text">
-    
-		<div class="campaign-form ">
-			<?php echo apply_filters('the_content', $cpost->post_content); ?>
+
+	<div class="flex-row entry-content-single">
+		<div class="flex-cell flex-md-1 hide-upto-medium"></div>
+
+		<div class="flex-cell flex-md-1 single-sharing-col hide-upto-medium">
+			<div id="knd_sharing" class="regular-sharing">
+				<?php echo knd_social_share_no_js();?>
+			</div>
 		</div>
 
-    
-        <div class="related-campaigns">
-            <a href="<?php echo site_url('/campaign/active/'); ?>" class="entry-link"><?php esc_html_e('They need help', 'knd') ?></a> 
-            <a href="<?php echo site_url('/campaign/completed/'); ?>" class="entry-link"><?php esc_html_e('They alredy got help', 'knd') ?></a> 
-        </div>
-    
-	</main>
-	
+		<main class="flex-cell flex-md-8">
+			<div class="campaign-form ">
+				<?php echo apply_filters('the_content', $cpost->post_content); ?>
+			</div>
+
+			<div class="related-campaigns">
+				<a href="<?php echo site_url('/campaign/active/'); ?>" class="entry-link"><?php esc_html_e('They need help', 'knd') ?></a>
+				<a href="<?php echo site_url('/campaign/completed/'); ?>" class="entry-link"><?php esc_html_e('They alredy got help', 'knd') ?></a>
+			</div>
+		</main>
+
+		<div class="flex-cell flex-md-2 hide-upto-medium"></div>
+	</div>
 </div>
 </article>
 
