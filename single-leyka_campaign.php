@@ -59,5 +59,15 @@ get_header();
 </div>
 </article>
 
+<div class="knd-signle-after-content">
+
+    <?php if($cpost->post_type == 'post'):?>
+        <?php dynamic_sidebar( 'knd-projects-archive-sidebar' );?>
+    <?php else: ?>
+        <?php dynamic_sidebar( 'knd-news-archive-sidebar' );?>
+    <?php endif ?>
+
+</div>
+
 <?php
 get_footer();
