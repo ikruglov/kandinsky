@@ -65,6 +65,7 @@ function knd_person_custom_content() {
         'menu_icon'           => 'dashicons-groups',
         'supports'            => array('title', 'excerpt', 'editor', 'thumbnail'),
         'taxonomies'          => array('person_cat'),
+        'show_in_rest'        => true,
     ));
 
 }
