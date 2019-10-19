@@ -35,9 +35,9 @@
 			</div>
 			
 			<div class="trigger-button menu site-panel-cell">
-				<a id="trigger_menu" href="<?php echo home_url('sitemap');?>">
-					<?php knd_svg_icon('icon-menu');?>					
-				</a>				
+				<a id="trigger_menu" title="Меню" href="<?php echo home_url('sitemap');?>">
+					<?php knd_svg_icon('icon-menu');?>
+				</a>
 			</div>
 			
 		</div>
