@@ -206,12 +206,12 @@
 	}
 }
 
-div.h1-logo-name {
+h3.logo-name {
 	font-family: $heading;
 	@include knd-head-main-text();
 }
 
-div.h2-logo-name {
+h4.logo-name {
 	padding-top: 4px;
 	@include knd-subhead-text();
 }
@@ -433,12 +433,12 @@ div.h2-logo-name {
 		}
 	}
 	
-	div.h1-logo-name {
+	h3.logo-name {
 		font-size: 15px;
 		line-height: 16px;
 	}
 
-	div.h2-logo-name {
+	h4.logo-name {
 		font-size: 11.5px;
 		line-height: 15px;
         text-transform: none;

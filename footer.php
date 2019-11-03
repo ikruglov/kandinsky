@@ -16,8 +16,8 @@ $footer_text = knd_get_theme_mod('footer_text');
     <div class="container">
         <div class="flex-row align-bottom bottom-branding">
             <div class="flex-cell flex-md-5">
-                <div class="logo-name h1-logo-name"><?php bloginfo('name');?></div>
-                <div class="logo-name h2-logo-name"><?php bloginfo('description');?></div>
+                <h3 class="logo-name"><?php bloginfo('name');?></h3>
+                <h4 class="logo-name"><?php bloginfo('description');?></h4>
             </div>
 
             <div class="flex-cell flex-md-7 links-right">

@@ -544,15 +544,15 @@ function knd_logo_markup() {
     <div class="logo-image-only"><?php echo knd_get_logo_img();?></div>
 <?php } elseif($mod == 'text_only') {?>
     <div class="logo-text-only">
-        <div class="logo-name h1-logo-name"><?php bloginfo('name');?></div>
-        <div class="logo-name h2-logo-name"><?php bloginfo('description');?></div>
+        <h3 class="logo-name"><?php bloginfo('name');?></h3>
+        <h4 class="logo-name"><?php bloginfo('description');?></h4>
     </div>
 <?php } else {?>
     <div class="logo-complex">
         <div class="logo"><?php echo knd_get_logo_img();?></div>
         <div class="text">
-            <div class="logo-name h1-logo-name"><?php bloginfo('name');?></div>
-            <div class="logo-name h2-logo-name"><?php bloginfo('description');?></div>
+            <h3 class="logo-name"><?php bloginfo('name');?></h3>
+            <h4 class="logo-name"><?php bloginfo('description');?></h4>
         </div>
     </div>
 <?php }?>

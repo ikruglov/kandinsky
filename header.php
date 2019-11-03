@@ -50,8 +50,8 @@
 		<div class="site-nav-title">
 			
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="snt-cell">
-				<div class="logo-name h1-logo-name"><?php bloginfo('name'); ?></div>
-				<div class="logo-name h2-logo-name hide-upto-medium"><?php bloginfo('description'); ?></div>
+				<h3 class="logo-name"><?php bloginfo('name'); ?></h3>
+				<h4 class="logo-name hide-upto-medium"><?php bloginfo('description'); ?></h4>
 			</a>
 			
 			<div id="trigger_menu_close" class="trigger-button close"><?php knd_svg_icon('icon-close');?></div>
