@@ -7,6 +7,12 @@
 	@include screen-reader();
 }
 
+figcaption {
+    text-align: center;
+    font-size: 75%;
+    color: #808080;
+}
+
 /* text alignment */
 .text-left   {
 	text-align: left; 
