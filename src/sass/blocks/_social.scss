@@ -97,7 +97,7 @@ $social_color: (
 	}
 }
 
-@each $item in vk, facebook, twitter, telegram, whatsapp, viber, ok  {
+@each $item in vk, facebook, twitter, telegram, whatsapp, viber, ok, instagram  {
 		
 	.social-likes__widget_#{$item} a {
 		background: social_color($item);

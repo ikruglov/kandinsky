@@ -86,6 +86,13 @@ function knd_social_share_no_js() {
 			'icon' => 'icon-facebook',
 			'show_mobile' => true
 		),	
+		'instagram' => array(
+			'label' => 'Подписаться на Instagram',
+			'url' => 'https://www.instagram.com/irkstella/',
+			'txt' => 'Instagram',
+			'icon' => 'icon-instagram',
+			'show_mobile' => true
+		),
 	);
 	
 ?>
