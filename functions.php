@@ -185,3 +185,30 @@ remove_action('template_redirect', 'rest_output_link_header', 11, 0);
 #function action_wp_mail_failed($wp_error) {
 #    return error_log(print_r($wp_error, true));
 #}
+
+###########################
+# this function is an attempt to modify logic of leyka_revo_template_campaign_page
+# by removing leyka_inline_campaign_small() which adds a small donation form after post content.
+
+add_action('wp_head', 'remove_leyka_revo_template_campaign_page', 99);
+function remove_leyka_revo_template_campaign_page() {
+    remove_filter('the_content', 'leyka_revo_template_campaign_page', 10);
+
+    if (!leyka_options()->opt_template('do_not_display_donation_form')) {
+        add_filter('the_content', 'leyka_revo_template_campaign_page_without_small_form');
+    }
+}
+
+# almost one-to-one copy from leyka_revo_template_campaign_page
+function leyka_revo_template_campaign_page_without_small_form($content) {
+    if( !is_singular(Leyka_Campaign_Management::$post_type) ) {
+        return $content;
+    }
+
+    $campaign_id = get_queried_object_id();
+
+    $before = leyka_inline_campaign(array('id' => $campaign_id, 'template' => 'revo'));
+    $after = ''; #leyka_inline_campaign_small($campaign_id);
+
+    return $before.$content.$after;
+}
