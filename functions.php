@@ -212,3 +212,10 @@ function leyka_revo_template_campaign_page_without_small_form($content) {
 
     return $before.$content.$after;
 }
+
+###########################
+# this logic add ability to not show leyka's engagement banner button
+add_filter('leyka_engb_banner_template', 'knd_leyka_engb_banner_template', 20);
+function knd_leyka_engb_banner_template($template) {
+    return get_template_directory() . '/templates/template-banner.php';
+}
